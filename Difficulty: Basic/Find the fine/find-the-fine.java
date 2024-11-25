@@ -27,7 +27,9 @@ class GFG {
 
             Solution obj = new Solution();
             System.out.println(obj.totalFine(date, car, fine));
-        }
+        
+System.out.println("~");
+}
     }
 }
 
@@ -39,33 +41,48 @@ class GFG {
 class Solution {
 
     public long totalFine(int date, int car[], int fine[]) {
-        // code here
+        // code here'
+
         
-        long totalSum=0;
+         // code here
+        boolean isDate=true;
+        
+        int carlength=car.length;
+        long sum=0;
         if(date%2==0){
+            isDate=true;
             
-            for(int i=0; i<car.length;i++){
-                if((car[i])%2!=0){
-                   totalSum+=fine[i]; 
-                }
+        }else{
+            isDate=false;
+        }
+        
+    
+        if(isDate){// If even
+        
+        
+        for(int i=0; i<carlength; i++){
+            
+            if(car[i]%2==1){
+                sum+=fine[i];
+                
             }
+        }
+            
             
             
         }
-         if((date%2)!=0){
+        
+        else{
             
-            for(int i=0; i<car.length;i++){
-                if((car[i])%2==0){
-                   totalSum+=fine[i]; 
+            for(int i=0; i<carlength;i++){
+                
+                if(car[i]%2==0){
+                    
+                    sum+=fine[i];
                 }
             }
-            
-            
         }
         
-        
-        
-        return totalSum;
-        
+       return sum; 
     }
 }
